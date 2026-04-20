@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ClassicModels | Analytics Report</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-tertiary-fixed": "#00201d",
+                      "on-tertiary-fixed-variant": "#005049",
+                      "primary-container": "#2b4696",
+                      "tertiary-fixed": "#89f5e7",
+                      "error-container": "#ffdad6",
+                      "primary-fixed-dim": "#b6c4ff",
+                      "on-primary-container": "#a6b9ff",
+                      "on-primary": "#ffffff",
+                      "secondary-fixed-dim": "#b9c7df",
+                      "inverse-surface": "#2d3133",
+                      "on-secondary-fixed-variant": "#3a485b",
+                      "on-primary-fixed-variant": "#264191",
+                      "tertiary-container": "#00554e",
+                      "inverse-primary": "#b6c4ff",
+                      "tertiary": "#003c36",
+                      "surface-bright": "#f7f9fb",
+                      "on-surface": "#191c1e",
+                      "surface-container-highest": "#e0e3e5",
+                      "on-background": "#191c1e",
+                      "inverse-on-surface": "#eff1f3",
+                      "surface-dim": "#d8dadc",
+                      "surface-container": "#eceef0",
+                      "surface-variant": "#e0e3e5",
+                      "secondary-container": "#d5e3fc",
+                      "secondary": "#515f74",
+                      "surface-container-lowest": "#ffffff",
+                      "outline-variant": "#c4c5d5",
+                      "on-tertiary": "#ffffff",
+                      "on-error": "#ffffff",
+                      "background": "#f7f9fb",
+                      "error": "#ba1a1a",
+                      "on-surface-variant": "#444653",
+                      "primary-fixed": "#dce1ff",
+                      "on-tertiary-container": "#5fcdbf",
+                      "on-primary-fixed": "#00164e",
+                      "outline": "#757684",
+                      "on-secondary-fixed": "#0d1c2e",
+                      "surface-tint": "#4059aa",
+                      "primary": "#0d2d7e",
+                      "secondary-fixed": "#d5e3fc",
+                      "on-error-container": "#93000a",
+                      "on-secondary-container": "#57657a",
+                      "surface": "#f7f9fb",
+                      "on-secondary": "#ffffff",
+                      "surface-container-low": "#f2f4f6",
+                      "surface-container-high": "#e6e8ea",
+                      "tertiary-fixed-dim": "#6bd8cb"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "fontFamily": {
+                      "headline": ["Inter"],
+                      "body": ["Inter"],
+                      "label": ["Inter"]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+        }
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; height: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #c4c5d5; border-radius: 10px; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface flex min-h-screen">
+<!-- SideNavBar Anchor -->
+<aside class="hidden md:flex flex-col h-screen w-64 bg-[#f2f4f6] dark:bg-slate-900 tonal-transition no-line-rule py-6 sticky top-0 overflow-y-auto">
+<div class="px-6 mb-8">
+<h1 class="text-lg font-black text-slate-900 dark:text-white">ClassicModels</h1>
+<p class="font-['Inter'] uppercase tracking-widest text-[10px] font-bold text-slate-500">Enterprise Intelligence</p>
+</div>
+<nav class="flex flex-col gap-1">
+<a class="text-slate-500 dark:text-slate-400 px-4 py-3 flex items-center gap-3 opacity-80 hover:bg-[#e0e3e5] dark:hover:bg-slate-800/50 transition-all translate-x-1 duration-300" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-['Inter'] uppercase tracking-widest text-[10px] font-bold">Dashboard</span>
+</a>
+<a class="border-l-4 border-[#1E40AF] bg-[#ffffff] text-[#1E40AF] dark:bg-slate-800 dark:text-blue-300 font-bold px-4 py-3 flex items-center gap-3 transition-all translate-x-1 duration-300" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-['Inter'] uppercase tracking-widest text-[10px] font-bold">Reports</span>
+</a>
+<a class="text-slate-500 dark:text-slate-400 px-4 py-3 flex items-center gap-3 opacity-80 hover:bg-[#e0e3e5] dark:hover:bg-slate-800/50 transition-all translate-x-1 duration-300" href="#">
+<span class="material-symbols-outlined">database</span>
+<span class="font-['Inter'] uppercase tracking-widest text-[10px] font-bold">Data Management</span>
+</a>
+<a class="text-slate-500 dark:text-slate-400 px-4 py-3 flex items-center gap-3 opacity-80 hover:bg-[#e0e3e5] dark:hover:bg-slate-800/50 transition-all translate-x-1 duration-300" href="#">
+<span class="material-symbols-outlined">chat_spark</span>
+<span class="font-['Inter'] uppercase tracking-widest text-[10px] font-bold">AI Chat</span>
+</a>
+</nav>
+<div class="mt-auto px-6">
+<div class="p-4 bg-surface-container-lowest rounded-xl shadow-none">
+<p class="text-[10px] font-bold uppercase tracking-tighter text-outline mb-2">System Status</p>
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-tertiary-fixed-dim animate-pulse"></div>
+<span class="text-xs font-medium text-on-surface-variant">Live Sync Active</span>
+</div>
+</div>
+</div>
+</aside>
+<main class="flex-1 flex flex-col min-w-0">
+<!-- TopNavBar Anchor -->
+<header class="flex justify-between items-center px-6 py-3 w-full no-border bg-slate-50/80 backdrop-blur-xl sticky top-0 z-40 font-['Inter'] antialiased text-sm tracking-tight">
+<div class="flex items-center gap-4 flex-1">
+<div class="relative w-full max-w-md">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-lg">search</span>
+<input class="w-full bg-surface-container-lowest border-none ring-1 ring-outline-variant/15 rounded-lg pl-10 pr-4 py-2 focus:ring-primary/50 transition-all text-sm outline-none" placeholder="Search report metrics..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden md:flex items-center gap-4">
+<button class="text-slate-500 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800 p-2 rounded-full transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="text-slate-500 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800 p-2 rounded-full transition-colors">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</div>
+<div class="h-8 w-8 rounded-full overflow-hidden ring-2 ring-primary-container/20">
+<img alt="User Profile Avatar" class="w-full h-full object-cover" data-alt="close-up portrait of a professional male executive with a confident expression in a bright modern office setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuARTv8Ssz0X7HRi4oRvCXTKzLWfVyNvE-_WARVpVQR6WC4LyytdFSbS1nc_kQdP6a6-n8GHYlgVM08LPuCDbryqdpwC3e55Xkj6dOgUD3W1ZAwrXcQqN8d4nIdbBsRNd--AD12JnqlOBltRGMRw8bXxO6UN5h7pfk1RhwcilCSQdPp_R3qoA9H0i7IIPyNrzXyj4QBnePryVjevz47zW1onTxHmKkYNAp-PrnBEV01BotPaoi9bolJAUjo4jGCHaxfdkGG5QNqyMXdA"/>
+</div>
+</div>
+</header>
+<!-- Content Area -->
+<div class="flex-1 p-8 space-y-8">
+<!-- Header Section -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<h2 class="text-display-sm font-extrabold text-primary tracking-tight leading-none mb-2">Analytics Report</h2>
+<p class="text-title-lg text-on-surface-variant font-medium tracking-tight">Global Sales Performance &amp; Pivot Matrix</p>
+</div>
+<div class="flex items-center gap-3">
+<button class="bg-surface-container-lowest text-primary px-4 py-2 rounded-lg font-semibold text-sm flex items-center gap-2 hover:bg-surface-container-high transition-colors ring-1 ring-outline-variant/15">
+<span class="material-symbols-outlined text-lg">file_download</span>
+                        Export PDF
+                    </button>
+<button class="bg-gradient-to-br from-primary to-primary-container text-white px-6 py-2 rounded-lg font-semibold text-sm shadow-sm flex items-center gap-2 hover:opacity-90 transition-all">
+<span class="material-symbols-outlined text-lg">refresh</span>
+                        Update Data
+                    </button>
+</div>
+</div>
+<!-- Filter Grid -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<div class="bg-surface-container-low p-5 rounded-xl space-y-3">
+<label class="text-[10px] font-bold uppercase tracking-widest text-outline">Region</label>
+<select class="w-full bg-surface-container-lowest border-none ring-1 ring-outline-variant/15 rounded-lg py-2 px-3 text-sm font-medium focus:ring-primary/50 outline-none">
+<option>Global - All Regions</option>
+<option>North America</option>
+<option>EMEA</option>
+<option>APAC</option>
+</select>
+</div>
+<div class="bg-surface-container-low p-5 rounded-xl space-y-3">
+<label class="text-[10px] font-bold uppercase tracking-widest text-outline">Date Range</label>
+<div class="flex items-center gap-2 bg-surface-container-lowest ring-1 ring-outline-variant/15 rounded-lg px-3 py-2">
+<span class="material-symbols-outlined text-outline text-lg">calendar_today</span>
+<input class="w-full border-none p-0 text-sm font-medium focus:ring-0 outline-none" type="text" value="Jan 2023 - Dec 2023"/>
+</div>
+</div>
+<div class="bg-surface-container-low p-5 rounded-xl space-y-3">
+<label class="text-[10px] font-bold uppercase tracking-widest text-outline">Currency</label>
+<div class="flex gap-2">
+<button class="flex-1 py-2 bg-primary text-white text-xs font-bold rounded-md">USD</button>
+<button class="flex-1 py-2 bg-surface-container-lowest text-on-surface-variant text-xs font-bold rounded-md ring-1 ring-outline-variant/15">EUR</button>
+<button class="flex-1 py-2 bg-surface-container-lowest text-on-surface-variant text-xs font-bold rounded-md ring-1 ring-outline-variant/15">GBP</button>
+</div>
+</div>
+<div class="bg-surface-container-low p-5 rounded-xl space-y-3">
+<label class="text-[10px] font-bold uppercase tracking-widest text-outline">Aggregation</label>
+<div class="flex items-center justify-between">
+<span class="text-sm font-semibold text-primary">Sum of Price Each</span>
+<span class="material-symbols-outlined text-primary cursor-pointer">settings_suggest</span>
+</div>
+</div>
+</div>
+<!-- Bento Stats -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="col-span-1 md:col-span-2 bg-surface-container-lowest p-8 rounded-2xl ring-1 ring-outline-variant/10 flex items-center gap-8">
+<div class="flex-1">
+<h3 class="text-sm font-bold text-outline uppercase tracking-widest mb-4">Total Revenue Trend</h3>
+<div class="flex items-baseline gap-4 mb-2">
+<span class="text-5xl font-black text-primary tracking-tighter">$4.28M</span>
+<span class="text-tertiary-fixed-variant text-sm font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">arrow_upward</span> 12.4%
+                            </span>
+</div>
+<p class="text-on-surface-variant text-sm font-medium">Growth vs previous fiscal year based on current filters.</p>
+</div>
+<div class="hidden lg:block w-48 h-24 bg-gradient-to-tr from-surface-container-low to-surface-container-high rounded-lg relative overflow-hidden">
+<div class="absolute inset-0 opacity-20">
+<img alt="Growth visualization" class="w-full h-full object-cover" data-alt="abstract tech visualization showing soft glowing data points and lines on a dark professional blue background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBenfvhqeSkvhu0f__GNuMHHMucH5svBCx4EjQyiZc-iyHlKGS3t7MFuo9OwfiFx3Yw0XAAi4DPt9Kk_TJARHUrTI0j1kny6w_DQa_X6zdpvT-cZmrwXl7aWJ-OsHser73D07HnQyTFX4Kk_F7RP-aYKNw61rjPnGwcJxiuMpY1DHHgbxZl3nkrudVESyJI4ba7pgff1cJwG2QA82rt-UoRtREojd1l75shc7TRDLNVMF8J0lus98ep6r0nj0MFGFFNlr1UCvpm-yID"/>
+</div>
+</div>
+</div>
+<div class="bg-gradient-to-br from-primary to-primary-container p-8 rounded-2xl text-white">
+<h3 class="text-xs font-bold uppercase tracking-widest opacity-80 mb-6">Top Product Line</h3>
+<div class="space-y-4">
+<div>
+<p class="text-2xl font-bold tracking-tight">Classic Cars</p>
+<p class="text-xs opacity-70">38% of total revenue share</p>
+</div>
+<div class="w-full bg-white/20 h-2 rounded-full">
+<div class="w-[38%] bg-tertiary-fixed-dim h-full rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Complex Pivot Table Container -->
+<div class="bg-surface-container-lowest rounded-2xl ring-1 ring-outline-variant/10 overflow-hidden">
+<div class="px-8 py-6 border-b border-outline-variant/10 flex justify-between items-center bg-surface-container-lowest">
+<div>
+<h3 class="text-title-lg font-bold text-primary tracking-tight">Sales Analysis Matrix</h3>
+<p class="text-[10px] font-bold text-outline uppercase tracking-widest">Pivot View: Product Line by Quarter</p>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 hover:bg-surface-container-low rounded-lg transition-colors"><span class="material-symbols-outlined text-outline">filter_list</span></button>
+<button class="p-2 hover:bg-surface-container-low rounded-lg transition-colors"><span class="material-symbols-outlined text-outline">unfold_more</span></button>
+</div>
+</div>
+<div class="overflow-x-auto custom-scrollbar">
+<table class="w-full border-collapse text-left">
+<thead>
+<tr class="bg-surface-container-low">
+<th class="p-4 text-[10px] font-bold text-outline uppercase tracking-widest border-r border-outline-variant/10 sticky left-0 bg-surface-container-low z-10 min-w-[200px]">Product Line</th>
+<th class="p-4 text-[10px] font-bold text-outline uppercase tracking-widest text-center" colspan="4">2022 Financial Year</th>
+<th class="p-4 text-[10px] font-bold text-outline uppercase tracking-widest text-center border-l border-outline-variant/10 bg-surface-container-high/50" colspan="4">2023 Financial Year</th>
+<th class="p-4 text-[10px] font-bold text-primary uppercase tracking-widest text-center border-l border-outline-variant/10 bg-primary/5">Total Sum</th>
+</tr>
+<tr class="bg-surface-container-lowest border-b border-outline-variant/10">
+<th class="p-4 text-[10px] font-bold text-on-surface-variant uppercase tracking-widest sticky left-0 bg-white z-10 border-r border-outline-variant/10"></th>
+<th class="p-4 text-[10px] font-bold text-on-surface-variant uppercase tracking-widest text-center">Q1</th>
+<th class="p-4 text-[10px] font-bold text-on-surface-variant uppercase tracking-widest text-center">Q2</th>
+<th class="p-4 text-[10px] font-bold text-on-surface-variant uppercase tracking-widest text-center">Q3</th>
+<th class="p-4 text-[10px] font-bold text-on-surface-variant uppercase tracking-widest text-center">Q4</th>
+<th class="p-4 text-[10px] font-bold text-on-surface-variant uppercase tracking-widest text-center border-l border-outline-variant/10">Q1</th>
+<th class="p-4 text-[10px] font-bold text-on-surface-variant uppercase tracking-widest text-center">Q2</th>
+<th class="p-4 text-[10px] font-bold text-on-surface-variant uppercase tracking-widest text-center">Q3</th>
+<th class="p-4 text-[10px] font-bold text-on-surface-variant uppercase tracking-widest text-center">Q4</th>
+<th class="p-4 text-[10px] font-bold text-primary uppercase tracking-widest text-center border-l border-outline-variant/10 bg-primary/5">Annual</th>
+</tr>
+</thead>
+<tbody class="text-body-md font-medium text-on-surface-variant">
+<tr class="group hover:bg-surface-container-low transition-colors">
+<td class="p-4 font-bold text-primary sticky left-0 bg-white group-hover:bg-surface-container-low z-10 border-r border-outline-variant/10">Classic Cars</td>
+<td class="p-4 text-center tabular-nums">$210,400</td>
+<td class="p-4 text-center tabular-nums">$189,200</td>
+<td class="p-4 text-center tabular-nums">$245,600</td>
+<td class="p-4 text-center tabular-nums">$312,000</td>
+<td class="p-4 text-center tabular-nums border-l border-outline-variant/10">$289,400</td>
+<td class="p-4 text-center tabular-nums">$302,100</td>
+<td class="p-4 text-center tabular-nums">$278,900</td>
+<td class="p-4 text-center tabular-nums">$345,000</td>
+<td class="p-4 text-center font-bold text-primary tabular-nums border-l border-outline-variant/10 bg-primary/5">$2.17M</td>
+</tr>
+<tr class="group hover:bg-surface-container-low transition-colors">
+<td class="p-4 font-bold text-primary sticky left-0 bg-white group-hover:bg-surface-container-low z-10 border-r border-outline-variant/10">Motorcycles</td>
+<td class="p-4 text-center tabular-nums">$98,000</td>
+<td class="p-4 text-center tabular-nums">$102,400</td>
+<td class="p-4 text-center tabular-nums">$115,000</td>
+<td class="p-4 text-center tabular-nums">$128,600</td>
+<td class="p-4 text-center tabular-nums border-l border-outline-variant/10">$142,000</td>
+<td class="p-4 text-center tabular-nums">$138,500</td>
+<td class="p-4 text-center tabular-nums">$125,000</td>
+<td class="p-4 text-center tabular-nums">$156,200</td>
+<td class="p-4 text-center font-bold text-primary tabular-nums border-l border-outline-variant/10 bg-primary/5">$1.01M</td>
+</tr>
+<tr class="group hover:bg-surface-container-low transition-colors">
+<td class="p-4 font-bold text-primary sticky left-0 bg-white group-hover:bg-surface-container-low z-10 border-r border-outline-variant/10">Planes</td>
+<td class="p-4 text-center tabular-nums">$45,200</td>
+<td class="p-4 text-center tabular-nums">$38,900</td>
+<td class="p-4 text-center tabular-nums">$42,100</td>
+<td class="p-4 text-center tabular-nums">$51,000</td>
+<td class="p-4 text-center tabular-nums border-l border-outline-variant/10">$48,200</td>
+<td class="p-4 text-center tabular-nums">$52,400</td>
+<td class="p-4 text-center tabular-nums">$49,100</td>
+<td class="p-4 text-center tabular-nums">$55,600</td>
+<td class="p-4 text-center font-bold text-primary tabular-nums border-l border-outline-variant/10 bg-primary/5">$382.5K</td>
+</tr>
+<tr class="group hover:bg-surface-container-low transition-colors">
+<td class="p-4 font-bold text-primary sticky left-0 bg-white group-hover:bg-surface-container-low z-10 border-r border-outline-variant/10">Ships</td>
+<td class="p-4 text-center tabular-nums">$32,100</td>
+<td class="p-4 text-center tabular-nums">$29,500</td>
+<td class="p-4 text-center tabular-nums">$31,200</td>
+<td class="p-4 text-center tabular-nums">$40,800</td>
+<td class="p-4 text-center tabular-nums border-l border-outline-variant/10">$35,600</td>
+<td class="p-4 text-center tabular-nums">$38,200</td>
+<td class="p-4 text-center tabular-nums">$34,500</td>
+<td class="p-4 text-center tabular-nums">$42,300</td>
+<td class="p-4 text-center font-bold text-primary tabular-nums border-l border-outline-variant/10 bg-primary/5">$284.2K</td>
+</tr>
+<tr class="group hover:bg-surface-container-low transition-colors">
+<td class="p-4 font-bold text-primary sticky left-0 bg-white group-hover:bg-surface-container-low z-10 border-r border-outline-variant/10">Trucks and Buses</td>
+<td class="p-4 text-center tabular-nums">$62,100</td>
+<td class="p-4 text-center tabular-nums">$58,200</td>
+<td class="p-4 text-center tabular-nums">$61,000</td>
+<td class="p-4 text-center tabular-nums">$75,400</td>
+<td class="p-4 text-center tabular-nums border-l border-outline-variant/10">$68,900</td>
+<td class="p-4 text-center tabular-nums">$71,200</td>
+<td class="p-4 text-center tabular-nums">$67,500</td>
+<td class="p-4 text-center tabular-nums">$79,100</td>
+<td class="p-4 text-center font-bold text-primary tabular-nums border-l border-outline-variant/10 bg-primary/5">$543.4K</td>
+</tr>
+</tbody>
+<tfoot>
+<tr class="bg-surface-container-high font-bold">
+<td class="p-4 uppercase text-[10px] tracking-widest text-primary sticky left-0 bg-surface-container-high z-10 border-r border-outline-variant/10">Grand Total</td>
+<td class="p-4 text-center tabular-nums">$447.7K</td>
+<td class="p-4 text-center tabular-nums">$418.2K</td>
+<td class="p-4 text-center tabular-nums">$494.9K</td>
+<td class="p-4 text-center tabular-nums">$607.8K</td>
+<td class="p-4 text-center tabular-nums border-l border-outline-variant/10">$584.1K</td>
+<td class="p-4 text-center tabular-nums">$602.4K</td>
+<td class="p-4 text-center tabular-nums">$555.0K</td>
+<td class="p-4 text-center tabular-nums">$678.2K</td>
+<td class="p-4 text-center text-primary tabular-nums border-l border-outline-variant/10">$4.39M</td>
+</tr>
+</tfoot>
+</table>
+</div>
+</div>
+<!-- Footer Meta -->
+<div class="flex flex-col md:flex-row justify-between items-center text-xs text-outline font-medium gap-4">
+<div class="flex items-center gap-4">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">history</span> Last synchronized: 2 mins ago</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">database</span> Source: production_v4.db</span>
+</div>
+<div class="flex items-center gap-6">
+<a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-primary transition-colors" href="#">Technical Support</a>
+<div class="flex items-center gap-1 bg-surface-container-low px-2 py-1 rounded-md">
+<span class="w-1.5 h-1.5 rounded-full bg-green-500"></span>
+<span class="uppercase tracking-tighter text-[9px] font-bold">Node.01 Online</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AI Chat - ClassicModels Enterprise</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed": "#00201d",
+                    "on-tertiary-fixed-variant": "#005049",
+                    "primary-container": "#2b4696",
+                    "tertiary-fixed": "#89f5e7",
+                    "error-container": "#ffdad6",
+                    "primary-fixed-dim": "#b6c4ff",
+                    "on-primary-container": "#a6b9ff",
+                    "on-primary": "#ffffff",
+                    "secondary-fixed-dim": "#b9c7df",
+                    "inverse-surface": "#2d3133",
+                    "on-secondary-fixed-variant": "#3a485b",
+                    "on-primary-fixed-variant": "#264191",
+                    "tertiary-container": "#00554e",
+                    "inverse-primary": "#b6c4ff",
+                    "tertiary": "#003c36",
+                    "surface-bright": "#f7f9fb",
+                    "on-surface": "#191c1e",
+                    "surface-container-highest": "#e0e3e5",
+                    "on-background": "#191c1e",
+                    "inverse-on-surface": "#eff1f3",
+                    "surface-dim": "#d8dadc",
+                    "surface-container": "#eceef0",
+                    "surface-variant": "#e0e3e5",
+                    "secondary-container": "#d5e3fc",
+                    "secondary": "#515f74",
+                    "surface-container-lowest": "#ffffff",
+                    "outline-variant": "#c4c5d5",
+                    "on-tertiary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "background": "#f7f9fb",
+                    "error": "#ba1a1a",
+                    "on-surface-variant": "#444653",
+                    "primary-fixed": "#dce1ff",
+                    "on-tertiary-container": "#5fcdbf",
+                    "on-primary-fixed": "#00164e",
+                    "outline": "#757684",
+                    "on-secondary-fixed": "#0d1c2e",
+                    "surface-tint": "#4059aa",
+                    "primary": "#0d2d7e",
+                    "secondary-fixed": "#d5e3fc",
+                    "on-error-container": "#93000a",
+                    "on-secondary-container": "#57657a",
+                    "surface": "#f7f9fb",
+                    "on-secondary": "#ffffff",
+                    "surface-container-low": "#f2f4f6",
+                    "surface-container-high": "#e6e8ea",
+                    "tertiary-fixed-dim": "#6bd8cb"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Inter"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface antialiased overflow-hidden flex h-screen">
+<!-- SideNavBar Component -->
+<aside class="hidden md:flex flex-col h-full py-6 bg-surface-container-low w-64 shrink-0">
+<div class="px-6 mb-8">
+<h1 class="text-lg font-black text-slate-900 leading-none">ClassicModels</h1>
+<p class="font-['Inter'] uppercase tracking-widest text-[10px] font-bold text-slate-500 mt-1">Enterprise Intelligence</p>
+</div>
+<nav class="flex-1 space-y-1">
+<div class="text-slate-500 px-4 py-3 flex items-center gap-3 opacity-80 hover:bg-[#e0e3e5] transition-all cursor-pointer group">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-['Inter'] uppercase tracking-widest text-[10px] font-bold">Dashboard</span>
+</div>
+<div class="text-slate-500 px-4 py-3 flex items-center gap-3 opacity-80 hover:bg-[#e0e3e5] transition-all cursor-pointer group">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="font-['Inter'] uppercase tracking-widest text-[10px] font-bold">Reports</span>
+</div>
+<div class="text-slate-500 px-4 py-3 flex items-center gap-3 opacity-80 hover:bg-[#e0e3e5] transition-all cursor-pointer group">
+<span class="material-symbols-outlined" data-icon="database">database</span>
+<span class="font-['Inter'] uppercase tracking-widest text-[10px] font-bold">Data Management</span>
+</div>
+<div class="border-l-4 border-primary bg-surface-container-lowest text-primary px-4 py-3 flex items-center gap-3 font-bold translate-x-1 duration-300">
+<span class="material-symbols-outlined" data-icon="chat_sparkle" style="font-variation-settings: 'FILL' 1;">chat_spark</span>
+<span class="font-['Inter'] uppercase tracking-widest text-[10px] font-bold">AI Chat</span>
+</div>
+</nav>
+<div class="px-4 mt-auto">
+<div class="p-4 rounded-xl bg-primary-container text-white">
+<p class="text-xs font-semibold opacity-80">Connected Source</p>
+<p class="text-sm font-bold mt-1">MySQL-Production-Cluster</p>
+<div class="flex items-center mt-3 gap-2">
+<div class="w-2 h-2 rounded-full bg-tertiary-fixed-dim animate-pulse"></div>
+<span class="text-[10px] uppercase tracking-wider font-bold">Live Synced</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 flex flex-col min-w-0 bg-surface relative">
+<!-- TopNavBar Component -->
+<header class="flex justify-between items-center px-6 py-3 w-full bg-slate-50/80 backdrop-blur-xl z-40">
+<div class="flex items-center gap-4 flex-1">
+<div class="relative w-full max-w-md group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline pointer-events-none text-xl" data-icon="search">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-surface-container-lowest border border-outline-variant/15 rounded-md text-sm focus:outline-none focus:ring-1 focus:ring-primary/50 transition-all" placeholder="Search historical queries..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<button class="p-2 rounded-md hover:bg-slate-200/50 transition-colors relative">
+<span class="material-symbols-outlined text-slate-500" data-icon="notifications">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full"></span>
+</button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant/30">
+<img alt="User Profile Avatar" class="w-full h-full object-cover" data-alt="Professional headshot of a data analyst in a modern office setting, soft natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBm0apTEueXcdtRR5jrsgUvq0uXl6wmVYVkRrKlMsqKp1ZxGYfVDeLqdqpvcwN_DyQN1oa8s7GdfWiVbi0nIy6lN7Wf3l2ztTqOMzCwe9dILsvxYNV3NCz3EK-ApL3iBMcZknBNUbu8ZPHsFY2nPVlY7bDgFt0FHCJc317e4uqZ852YDuCse1OBnSLA3Wx-CExSNbwaV5Ho-INeGYdmkb4YNjvF2MjNmZfSusv8kvQz9JRdYojmnwCxbTYrxfmQbvk2EQn4EdhA82vz"/>
+</div>
+</div>
+</header>
+<!-- Chat Container -->
+<section class="flex-1 overflow-y-auto no-scrollbar px-6 py-8">
+<div class="max-w-4xl mx-auto space-y-10">
+<!-- Initial Welcome State (Floating Header) -->
+<div class="text-center py-10">
+<h2 class="text-display-sm font-extrabold text-primary tracking-tight mb-2">Hello, Analyst</h2>
+<p class="text-on-surface-variant text-body-md max-w-lg mx-auto">Query the ClassicModels database using natural language. I can generate reports, analyze trends, and visualize your data instantly.</p>
+</div>
+<!-- Suggested Questions (Bento Style) -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-2xl mx-auto">
+<button class="flex items-center gap-4 p-4 rounded-xl bg-surface-container-lowest hover:bg-surface-container-high transition-all text-left group">
+<div class="w-10 h-10 rounded-lg bg-secondary-container flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined" data-icon="leaderboard">leaderboard</span>
+</div>
+<div>
+<p class="text-label-md font-bold text-on-surface uppercase tracking-wider">Revenue Analysis</p>
+<p class="text-body-md text-on-surface-variant">What are the top 5 customers by revenue?</p>
+</div>
+</button>
+<button class="flex items-center gap-4 p-4 rounded-xl bg-surface-container-lowest hover:bg-surface-container-high transition-all text-left group">
+<div class="w-10 h-10 rounded-lg bg-tertiary-container/10 flex items-center justify-center text-on-tertiary-fixed-variant group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined" data-icon="timeline">timeline</span>
+</div>
+<div>
+<p class="text-label-md font-bold text-on-surface uppercase tracking-wider">Trend Mapping</p>
+<p class="text-body-md text-on-surface-variant">Show me sales trends for Classic Cars</p>
+</div>
+</button>
+<button class="flex items-center gap-4 p-4 rounded-xl bg-surface-container-lowest hover:bg-surface-container-high transition-all text-left group">
+<div class="w-10 h-10 rounded-lg bg-secondary-container flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+</div>
+<div>
+<p class="text-label-md font-bold text-on-surface uppercase tracking-wider">Inventory Insight</p>
+<p class="text-body-md text-on-surface-variant">Which products are currently low in stock?</p>
+</div>
+</button>
+<button class="flex items-center gap-4 p-4 rounded-xl bg-surface-container-lowest hover:bg-surface-container-high transition-all text-left group">
+<div class="w-10 h-10 rounded-lg bg-tertiary-container/10 flex items-center justify-center text-on-tertiary-fixed-variant group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined" data-icon="public">public</span>
+</div>
+<div>
+<p class="text-label-md font-bold text-on-surface uppercase tracking-wider">Regional Data</p>
+<p class="text-body-md text-on-surface-variant">Compare Q3 sales by geographic region</p>
+</div>
+</button>
+</div>
+<!-- Chat History Sample -->
+<div class="space-y-8 mt-12">
+<!-- User Message -->
+<div class="flex justify-end gap-3 max-w-3xl ml-auto">
+<div class="bg-primary text-white p-4 rounded-2xl rounded-tr-none shadow-sm">
+<p class="text-body-md">Show me sales trends for Classic Cars in 2023 by month.</p>
+</div>
+<div class="w-8 h-8 rounded-full bg-slate-200 flex-shrink-0">
+<img class="w-full h-full object-cover rounded-full" data-alt="Close up portrait of a professional analyst with a neutral expression" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSxvL-X58HQPR8iTmPF3IYAdPMGdYZGcrgVY7G1LO_u7knOtP2FAzjiLBUBilTjK11_O3vo0E-jFqpWIdWUPMI5hKlgA1xbEOLYYVRmOiKu4UgeJ3qEhZ9enc64Dd3N0Qe1Is2_4T_uw-W05ZIXifvc-AMM45H3IMHfE-iE5nDw7EAk1JRUbcyxBhgD5R-WfPOnLHVA8f9w8tb2Qz6GHQ0xwJviIfVJIDNTIybr9cdlauDpzA0sO95wE_JAdlKlfePUw7jHfnlhDsl"/>
+</div>
+</div>
+<!-- AI Response -->
+<div class="flex gap-3 max-w-3xl">
+<div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-white text-lg" data-icon="smart_toy">smart_toy</span>
+</div>
+<div class="flex-1 space-y-4">
+<div class="bg-surface-container-lowest p-6 rounded-2xl rounded-tl-none shadow-sm border border-outline-variant/10">
+<p class="text-body-md leading-relaxed text-on-surface mb-6">Based on the sales records for the **Classic Cars** product line in 2023, there is a significant peak in October and November. This correlates with the annual holiday stocking period.</p>
+<!-- Data Visualization Widget -->
+<div class="bg-surface p-4 rounded-xl border border-outline-variant/20">
+<div class="flex items-center justify-between mb-6">
+<div>
+<h4 class="text-label-md font-bold text-on-surface uppercase tracking-widest">Monthly Sales Performance</h4>
+<p class="text-xs text-on-surface-variant">Units Sold: Classic Cars Line (2023)</p>
+</div>
+<div class="flex gap-2">
+<button class="p-1 hover:bg-surface-container-high rounded transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="download">download</span>
+</button>
+<button class="p-1 hover:bg-surface-container-high rounded transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="fullscreen">fullscreen</span>
+</button>
+</div>
+</div>
+<!-- Simplified Bar Chart Visual -->
+<div class="flex items-end gap-2 h-40 px-2">
+<div class="flex-1 bg-primary-fixed-dim/40 rounded-t-sm h-[30%] relative group">
+<div class="absolute -top-6 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 bg-on-surface text-white text-[10px] px-1.5 py-0.5 rounded transition-opacity">12k</div>
+</div>
+<div class="flex-1 bg-primary-fixed-dim/40 rounded-t-sm h-[45%] relative group"></div>
+<div class="flex-1 bg-primary-fixed-dim/40 rounded-t-sm h-[40%] relative group"></div>
+<div class="flex-1 bg-primary-fixed-dim/40 rounded-t-sm h-[55%] relative group"></div>
+<div class="flex-1 bg-primary-fixed-dim/40 rounded-t-sm h-[60%] relative group"></div>
+<div class="flex-1 bg-primary-fixed-dim/40 rounded-t-sm h-[50%] relative group"></div>
+<div class="flex-1 bg-primary-fixed-dim/40 rounded-t-sm h-[48%] relative group"></div>
+<div class="flex-1 bg-primary-fixed-dim/40 rounded-t-sm h-[52%] relative group"></div>
+<div class="flex-1 bg-primary-fixed-dim/40 rounded-t-sm h-[65%] relative group"></div>
+<div class="flex-1 bg-primary rounded-t-sm h-[95%] relative group shadow-lg">
+<div class="absolute -top-6 left-1/2 -translate-x-1/2 opacity-100 bg-on-surface text-white text-[10px] px-1.5 py-0.5 rounded">42k</div>
+</div>
+<div class="flex-1 bg-primary rounded-t-sm h-[85%] relative group shadow-lg"></div>
+<div class="flex-1 bg-primary-fixed-dim/40 rounded-t-sm h-[60%] relative group"></div>
+</div>
+<div class="flex justify-between mt-4 text-[10px] font-bold text-outline uppercase tracking-widest">
+<span>Jan</span>
+<span>Apr</span>
+<span>Jul</span>
+<span>Oct</span>
+<span>Dec</span>
+</div>
+</div>
+<div class="mt-6 pt-4 border-t border-outline-variant/10 flex items-center gap-4">
+<button class="text-[10px] font-bold text-primary flex items-center gap-1 uppercase tracking-wider hover:underline">
+<span class="material-symbols-outlined text-sm" data-icon="description">description</span> Export CSV
+                                    </button>
+<button class="text-[10px] font-bold text-primary flex items-center gap-1 uppercase tracking-wider hover:underline">
+<span class="material-symbols-outlined text-sm" data-icon="share">share</span> Share Report
+                                    </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Input Area (Fixed Bottom) -->
+<footer class="p-6 bg-surface/80 backdrop-blur-md">
+<div class="max-w-4xl mx-auto relative">
+<div class="bg-surface-container-lowest rounded-2xl border border-outline-variant/30 shadow-xl overflow-hidden flex flex-col focus-within:ring-2 focus-within:ring-primary/20 transition-all">
+<div class="flex items-center gap-2 px-4 pt-3 text-[10px] font-bold text-outline uppercase tracking-widest">
+<span class="material-symbols-outlined text-xs" data-icon="auto_awesome">auto_awesome</span>
+                        AI Engine: v4.2 Pro
+                    </div>
+<div class="flex items-end gap-2 p-3">
+<button class="p-2 text-outline hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="attach_file">attach_file</span>
+</button>
+<textarea class="flex-1 py-2 px-2 bg-transparent border-none focus:ring-0 text-body-md resize-none max-h-32 placeholder-outline/50" placeholder="Type your data question here... (e.g. 'Compare sales by office city')" rows="1"></textarea>
+<button class="w-10 h-10 rounded-xl bg-primary text-white flex items-center justify-center hover:bg-primary-container transition-all active:scale-95 shadow-md">
+<span class="material-symbols-outlined" data-icon="send">send</span>
+</button>
+</div>
+</div>
+<p class="text-center text-[10px] text-on-surface-variant mt-3 opacity-60">ClassicModels AI can make mistakes. Always verify critical financial data against official reports.</p>
+</div>
+</footer>
+</main>
+<!-- Floating Utility Action (FAB Suppression Logic Check: Active for main views) -->
+<div class="fixed bottom-24 right-8">
+<button class="w-14 h-14 rounded-full bg-tertiary text-white shadow-2xl flex items-center justify-center hover:scale-105 transition-transform group">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+<span class="absolute right-full mr-4 bg-on-surface text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 whitespace-nowrap pointer-events-none transition-opacity">Query Guide</span>
+</button>
+</div>
+</body></html>

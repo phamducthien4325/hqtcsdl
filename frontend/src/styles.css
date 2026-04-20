@@ -1,0 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
+
+:root {
+  font-family: "Inter", sans-serif;
+  color-scheme: light;
+  --bg-surface: #f7f9fb;
+  --bg-sidebar: #f2f4f6;
+  --bg-paper: #ffffff;
+  --bg-paper-muted: #eef1f4;
+  --text-main: #191c1e;
+  --text-muted: #444653;
+  --text-outline: #757684;
+  --brand: #0d2d7e;
+  --brand-2: #2b4696;
+  --accent: #89f5e7;
+  --outline-soft: rgba(196, 197, 213, 0.18);
+  --ambient-shadow: 0 12px 32px -4px rgba(25, 28, 30, 0.08);
+  --glass: rgba(255, 255, 255, 0.8);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: var(--bg-surface);
+  color: var(--text-main);
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.app-glass {
+  background: var(--glass);
+  backdrop-filter: blur(12px);
+}
+
+.enterprise-gradient {
+  background: linear-gradient(135deg, var(--brand) 0%, var(--brand-2) 100%);
+}

@@ -1,0 +1,147 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Customer {
+  customerNumber          Int        @id @map("customerNumber")
+  customerName            String     @db.VarChar(50)
+  contactLastName         String     @db.VarChar(50)
+  contactFirstName        String     @db.VarChar(50)
+  phone                   String     @db.VarChar(50)
+  addressLine1            String     @db.VarChar(50)
+  addressLine2            String?    @db.VarChar(50)
+  city                    String     @db.VarChar(50)
+  state                   String?    @db.VarChar(50)
+  postalCode              String?    @db.VarChar(15)
+  country                 String     @db.VarChar(50)
+  salesRepEmployeeNumber  Int?       @map("salesRepEmployeeNumber")
+  creditLimit             Decimal?   @db.Decimal(10, 2)
+  orders                  Order[]
+  payments                Payment[]
+  salesRep                Employee?  @relation("CustomerSalesRep", fields: [salesRepEmployeeNumber], references: [employeeNumber])
+
+  @@map("customers")
+}
+
+model Order {
+  orderNumber    Int           @id @map("orderNumber")
+  orderDate      DateTime      @db.Date
+  requiredDate   DateTime      @db.Date
+  shippedDate    DateTime?     @db.Date
+  status         String        @db.VarChar(15)
+  comments       String?       @db.Text
+  customerNumber Int           @map("customerNumber")
+  customer       Customer      @relation(fields: [customerNumber], references: [customerNumber])
+  orderDetails   OrderDetail[]
+
+  @@index([customerNumber], map: "customerNumber")
+  @@map("orders")
+}
+
+model ProductLine {
+  productLine      String    @id @db.VarChar(50)
+  textDescription  String?   @db.VarChar(4000)
+  htmlDescription  String?   @db.MediumText
+  image            Bytes?    @db.MediumBlob
+  products         Product[]
+
+  @@map("productlines")
+}
+
+model Product {
+  productCode        String         @id @db.VarChar(15)
+  productName        String         @db.VarChar(70)
+  productLine        String         @db.VarChar(50)
+  productScale       String         @db.VarChar(10)
+  productVendor      String         @db.VarChar(50)
+  productDescription String         @db.Text
+  quantityInStock    Int            @db.SmallInt
+  buyPrice           Decimal        @db.Decimal(10, 2)
+  MSRP               Decimal        @db.Decimal(10, 2)
+  line               ProductLine    @relation(fields: [productLine], references: [productLine])
+  orderDetails       OrderDetail[]
+
+  @@index([productLine], map: "productLine")
+  @@map("products")
+}
+
+model OrderDetail {
+  orderNumber      Int      @map("orderNumber")
+  productCode      String   @db.VarChar(15)
+  quantityOrdered  Int      @db.Int
+  priceEach        Decimal  @db.Decimal(10, 2)
+  orderLineNumber  Int      @db.SmallInt
+  order            Order    @relation(fields: [orderNumber], references: [orderNumber])
+  product          Product  @relation(fields: [productCode], references: [productCode])
+
+  @@id([orderNumber, productCode])
+  @@index([productCode], map: "productCode")
+  @@map("orderdetails")
+}
+
+model Payment {
+  customerNumber Int       @map("customerNumber")
+  checkNumber    String    @db.VarChar(50)
+  paymentDate    DateTime  @db.Date
+  amount         Decimal   @db.Decimal(10, 2)
+  customer       Customer  @relation(fields: [customerNumber], references: [customerNumber])
+
+  @@id([customerNumber, checkNumber])
+  @@map("payments")
+}
+
+model Employee {
+  employeeNumber  Int        @id @map("employeeNumber")
+  lastName        String     @db.VarChar(50)
+  firstName       String     @db.VarChar(50)
+  extension       String     @db.VarChar(10)
+  email           String     @db.VarChar(100)
+  officeCode      String     @db.VarChar(10)
+  reportsTo       Int?
+  jobTitle        String     @db.VarChar(50)
+  office          Office     @relation(fields: [officeCode], references: [officeCode])
+  manager         Employee?  @relation("EmployeeHierarchy", fields: [reportsTo], references: [employeeNumber])
+  subordinates    Employee[] @relation("EmployeeHierarchy")
+  customers       Customer[] @relation("CustomerSalesRep")
+
+  @@index([officeCode], map: "officeCode")
+  @@index([reportsTo], map: "reportsTo")
+  @@map("employees")
+}
+
+model Office {
+  officeCode    String     @id @db.VarChar(10)
+  city          String     @db.VarChar(50)
+  phone         String     @db.VarChar(50)
+  addressLine1  String     @db.VarChar(50)
+  addressLine2  String?    @db.VarChar(50)
+  state         String?    @db.VarChar(50)
+  country       String     @db.VarChar(50)
+  postalCode    String     @db.VarChar(15)
+  territory     String     @db.VarChar(10)
+  employees     Employee[]
+
+  @@map("offices")
+}
+
+model AppUser {
+  id            Int      @id @default(autoincrement())
+  name          String   @db.VarChar(120)
+  email         String   @unique @db.VarChar(120)
+  passwordHash  String   @db.VarChar(255)
+  role          Role
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  @@map("app_users")
+}
+
+enum Role {
+  admin
+  staff
+}

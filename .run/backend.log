@@ -1,0 +1,76 @@
+
+> classicmodels-backend@1.0.0 dev
+> nodemon src/server.js
+
+[33m[nodemon] 3.1.14[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching path(s): *.*[39m
+[33m[nodemon] watching extensions: js,mjs,cjs,json[39m
+[32m[nodemon] starting `node src/server.js`[39m
+API listening on http://localhost:4000
+[0mPOST /api/auth/login [32m200[0m 113.083 ms - 353[0m
+[0mPOST /api/auth/login [32m200[0m 82.460 ms - 353[0m
+[0mPOST /api/chatbot/query [33m400[0m 2.718 ms - 85[0m
+[0mPOST /api/chatbot/query [33m400[0m 1.951 ms - 99[0m
+[0mGET /api/analytics/dashboard [36m304[0m 26.526 ms - -[0m
+[0mGET /api/analytics/dashboard [36m304[0m 1.234 ms - -[0m
+[0mGET /api/reports/sales [36m304[0m 3.928 ms - -[0m
+[0mGET /api/reports/sales [36m304[0m 2.727 ms - -[0m
+[0mGET /api/customers?page=1&pageSize=10&search=&country= [36m304[0m 7.709 ms - -[0m
+[0mGET /api/customers?page=1&pageSize=10&search=&country= [36m304[0m 5.845 ms - -[0m
+[0mGET /api/orders?page=1&pageSize=10&status=&dateFrom=&dateTo= [36m304[0m 11.312 ms - -[0m
+[0mGET /api/orders?page=1&pageSize=10&status=&dateFrom=&dateTo= [36m304[0m 8.608 ms - -[0m
+[0mGET /api/products?page=1&pageSize=10&search=&productLine=&minPrice=&maxPrice= [36m304[0m 5.253 ms - -[0m
+[0mGET /api/products?page=1&pageSize=10&search=&productLine=&minPrice=&maxPrice= [36m304[0m 4.456 ms - -[0m
+[0mGET /api/payments?page=1&pageSize=25 [36m304[0m 6.109 ms - -[0m
+[0mGET /api/payments?page=1&pageSize=25 [36m304[0m 4.103 ms - -[0m
+[0mGET /api/employees [36m304[0m 9.746 ms - -[0m
+[0mGET /api/employees [36m304[0m 5.345 ms - -[0m
+[0mGET /api/analytics/pivot [36m304[0m 32.498 ms - -[0m
+[0mGET /api/analytics/pivot [36m304[0m 24.446 ms - -[0m
+[0mGET /api/analytics/dashboard [36m304[0m 0.951 ms - -[0m
+[0mGET /api/analytics/dashboard [36m304[0m 0.790 ms - -[0m
+[0mPOST /api/chatbot/query [32m200[0m 6.142 ms - 647[0m
+[0mPOST /api/chatbot/query [33m400[0m 0.972 ms - 85[0m
+[0mPOST /api/chatbot/query [32m200[0m 3.432 ms - 274[0m
+[0mGET /api/reports/sales [36m304[0m 11.650 ms - -[0m
+[0mGET /api/reports/sales [36m304[0m 2.823 ms - -[0m
+[0mGET /api/customers?page=1&pageSize=10&search=&country= [36m304[0m 8.784 ms - -[0m
+[0mGET /api/customers?page=1&pageSize=10&search=&country= [36m304[0m 7.626 ms - -[0m
+[0mGET /api/orders?page=1&pageSize=10&status=&dateFrom=&dateTo= [36m304[0m 12.784 ms - -[0m
+[0mGET /api/orders?page=1&pageSize=10&status=&dateFrom=&dateTo= [36m304[0m 11.023 ms - -[0m
+[0mGET /api/products?page=1&pageSize=10&search=&productLine=&minPrice=&maxPrice= [36m304[0m 5.155 ms - -[0m
+[0mGET /api/products?page=1&pageSize=10&search=&productLine=&minPrice=&maxPrice= [36m304[0m 5.284 ms - -[0m
+[0mGET /api/payments?page=1&pageSize=25 [36m304[0m 10.179 ms - -[0m
+[0mGET /api/payments?page=1&pageSize=25 [36m304[0m 6.657 ms - -[0m
+[0mGET /api/employees [36m304[0m 9.545 ms - -[0m
+[0mGET /api/employees [36m304[0m 6.370 ms - -[0m
+[0mGET /api/analytics/pivot [36m304[0m 32.750 ms - -[0m
+[0mGET /api/analytics/pivot [36m304[0m 28.461 ms - -[0m
+[0mGET /api/reports/sales [36m304[0m 3.253 ms - -[0m
+[0mGET /api/reports/sales [36m304[0m 2.554 ms - -[0m
+[0mGET /api/customers?page=1&pageSize=10&search=&country= [36m304[0m 3.504 ms - -[0m
+[0mGET /api/customers?page=1&pageSize=10&search=&country= [36m304[0m 3.631 ms - -[0m
+[0mGET /api/employees [36m304[0m 8.959 ms - -[0m
+[0mGET /api/employees [36m304[0m 8.110 ms - -[0m
+[0mGET /api/analytics/pivot [36m304[0m 28.576 ms - -[0m
+[0mGET /api/analytics/pivot [36m304[0m 27.313 ms - -[0m
+[0mGET /api/analytics/dashboard [36m304[0m 46.060 ms - -[0m
+[0mGET /api/analytics/dashboard [36m304[0m 0.719 ms - -[0m
+[0mGET /api/analytics/pivot [36m304[0m 30.713 ms - -[0m
+[0mGET /api/analytics/pivot [36m304[0m 29.757 ms - -[0m
+[0mGET /api/analytics/dashboard [36m304[0m 14.681 ms - -[0m
+[0mGET /api/analytics/dashboard [36m304[0m 0.775 ms - -[0m
+[0mPOST /api/chatbot/query [33m400[0m 1.246 ms - 85[0m
+[0mGET /api/reports/sales [36m304[0m 9.134 ms - -[0m
+[0mGET /api/reports/sales [36m304[0m 2.795 ms - -[0m
+[0mGET /api/customers?page=1&pageSize=10&search=&country= [36m304[0m 7.328 ms - -[0m
+[0mGET /api/customers?page=1&pageSize=10&search=&country= [36m304[0m 4.950 ms - -[0m
+[0mGET /api/orders?page=1&pageSize=10&status=&dateFrom=&dateTo= [36m304[0m 9.742 ms - -[0m
+[0mGET /api/orders?page=1&pageSize=10&status=&dateFrom=&dateTo= [36m304[0m 10.026 ms - -[0m
+[0mGET /api/products?page=1&pageSize=10&search=&productLine=&minPrice=&maxPrice= [36m304[0m 7.768 ms - -[0m
+[0mGET /api/products?page=1&pageSize=10&search=&productLine=&minPrice=&maxPrice= [36m304[0m 6.963 ms - -[0m
+[0mGET /api/payments?page=1&pageSize=25 [36m304[0m 12.504 ms - -[0m
+[0mGET /api/payments?page=1&pageSize=25 [36m304[0m 4.668 ms - -[0m
+[0mGET /api/analytics/dashboard [36m304[0m 22.736 ms - -[0m
+[0mGET /api/analytics/dashboard [36m304[0m 0.784 ms - -[0m
