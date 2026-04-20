@@ -74,3 +74,100 @@ API listening on http://localhost:4000
 [0mGET /api/payments?page=1&pageSize=25 [36m304[0m 4.668 ms - -[0m
 [0mGET /api/analytics/dashboard [36m304[0m 22.736 ms - -[0m
 [0mGET /api/analytics/dashboard [36m304[0m 0.784 ms - -[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node src/server.js`[39m
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node src/server.js`[39m
+API listening on http://localhost:4000
+[0mGET /api/analytics/dashboard [33m401[0m 3.680 ms - 61[0m
+[0mGET /api/analytics/dashboard [36m304[0m 46.646 ms - -[0m
+[0mPOST /api/chatbot/query [33m400[0m 3.548 ms - 144[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node src/server.js`[39m
+API listening on http://localhost:4000
+[0mGET /api/analytics/dashboard [33m401[0m 3.042 ms - 61[0m
+[0mGET /api/analytics/dashboard [36m304[0m 43.305 ms - -[0m
+[0mPOST /api/chatbot/query [33m400[0m 3.728 ms - 144[0m
+[0mGET /api/analytics/dashboard [33m401[0m 0.245 ms - 61[0m
+[0mGET /api/analytics/dashboard [36m304[0m 13.679 ms - -[0m
+[0mPOST /api/chatbot/query [33m400[0m 1.512 ms - 144[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node src/server.js`[39m
+API listening on http://localhost:4000
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node src/server.js`[39m
+API listening on http://localhost:4000
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node src/server.js`[39m
+API listening on http://localhost:4000
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node src/server.js`[39m
+API listening on http://localhost:4000
+[0mGET /api/analytics/dashboard [33m401[0m 3.990 ms - 61[0m
+[0mGET /api/analytics/dashboard [36m304[0m 56.146 ms - -[0m
+[0mPOST /api/chatbot/query [31m503[0m 557.080 ms - 86[0m
+[0mGET /api/analytics/dashboard [33m401[0m 0.493 ms - 61[0m
+[0mGET /api/analytics/dashboard [36m304[0m 1.863 ms - -[0m
+[0mPOST /api/chatbot/query [32m200[0m 644.086 ms - 421[0m
+[0mPOST /api/chatbot/query [31m503[0m 561.205 ms - 86[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node src/server.js`[39m
+API listening on http://localhost:4000
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node src/server.js`[39m
+API listening on http://localhost:4000
+[0mGET /api/analytics/dashboard [33m401[0m 3.693 ms - 61[0m
+[0mGET /api/analytics/dashboard [36m304[0m 42.416 ms - -[0m
+[0mPOST /api/chatbot/query [33m400[0m 2287.840 ms - 62[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node src/server.js`[39m
+API listening on http://localhost:4000
+[0mGET /api/analytics/dashboard [33m401[0m 3.547 ms - 61[0m
+[0mGET /api/analytics/dashboard [36m304[0m 56.636 ms - -[0m
+[0mPOST /api/chatbot/query [32m200[0m 1958.795 ms - 8661[0m
+[0mPOST /api/chatbot/query [31m500[0m 7590.241 ms - 66[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node src/server.js`[39m
+API listening on http://localhost:4000
+[0mGET /api/analytics/dashboard [33m401[0m 3.806 ms - 61[0m
+[0mGET /api/analytics/dashboard [36m304[0m 57.362 ms - -[0m
+[0mPOST /api/chatbot/query [32m200[0m 21735.168 ms - 1130[0m
+[0mGET /api/reports/sales [36m304[0m 4.755 ms - -[0m
+[0mGET /api/reports/sales [36m304[0m 2.698 ms - -[0m
+[0mGET /api/customers?page=1&pageSize=10&search=&country= [36m304[0m 8.121 ms - -[0m
+[0mGET /api/customers?page=1&pageSize=10&search=&country= [36m304[0m 4.174 ms - -[0m
+[0mGET /api/analytics/dashboard [36m304[0m 1.145 ms - -[0m
+[0mGET /api/analytics/dashboard [36m304[0m 1.088 ms - -[0m
+[0mGET /api/analytics/dashboard [33m401[0m 0.373 ms - 61[0m
+[0mGET /api/analytics/dashboard [36m304[0m 17.464 ms - -[0m
+[0mGET /api/reports/sales [36m304[0m 4.640 ms - -[0m
+[0mGET /api/reports/sales [36m304[0m 2.565 ms - -[0m
+[0mGET /api/orders?page=1&pageSize=10&status=&dateFrom=&dateTo= [36m304[0m 12.222 ms - -[0m
+[0mGET /api/orders?page=1&pageSize=10&status=&dateFrom=&dateTo= [36m304[0m 7.955 ms - -[0m
+[0mGET /api/products?page=1&pageSize=10&search=&productLine=&minPrice=&maxPrice= [36m304[0m 6.659 ms - -[0m
+[0mGET /api/products?page=1&pageSize=10&search=&productLine=&minPrice=&maxPrice= [36m304[0m 5.831 ms - -[0m
+[0mGET /api/payments?page=1&pageSize=25 [36m304[0m 7.116 ms - -[0m
+[0mGET /api/payments?page=1&pageSize=25 [36m304[0m 5.373 ms - -[0m
+[0mGET /api/employees [36m304[0m 9.329 ms - -[0m
+[0mGET /api/employees [36m304[0m 6.958 ms - -[0m
+[0mGET /api/analytics/pivot [36m304[0m 32.289 ms - -[0m
+[0mGET /api/analytics/pivot [36m304[0m 26.868 ms - -[0m
+[0mGET /api/analytics/dashboard [36m304[0m 0.896 ms - -[0m
+[0mGET /api/analytics/dashboard [36m304[0m 0.699 ms - -[0m
+[0mGET /api/reports/sales [36m304[0m 10.118 ms - -[0m
+[0mGET /api/reports/sales [36m304[0m 2.712 ms - -[0m
+[0mGET /api/customers?page=1&pageSize=10&search=&country= [36m304[0m 10.915 ms - -[0m
+[0mGET /api/customers?page=1&pageSize=10&search=&country= [36m304[0m 4.991 ms - -[0m
+[0mGET /api/orders?page=1&pageSize=10&status=&dateFrom=&dateTo= [36m304[0m 10.075 ms - -[0m
+[0mGET /api/orders?page=1&pageSize=10&status=&dateFrom=&dateTo= [36m304[0m 8.150 ms - -[0m
+[0mGET /api/products?page=1&pageSize=10&search=&productLine=&minPrice=&maxPrice= [36m304[0m 6.274 ms - -[0m
+[0mGET /api/products?page=1&pageSize=10&search=&productLine=&minPrice=&maxPrice= [36m304[0m 3.814 ms - -[0m
+[0mGET /api/payments?page=1&pageSize=25 [36m304[0m 8.592 ms - -[0m
+[0mGET /api/payments?page=1&pageSize=25 [36m304[0m 5.192 ms - -[0m
+[0mGET /api/employees [36m304[0m 8.154 ms - -[0m
+[0mGET /api/employees [36m304[0m 5.903 ms - -[0m
+[0mGET /api/analytics/pivot [36m304[0m 28.226 ms - -[0m
+[0mGET /api/analytics/pivot [36m304[0m 25.284 ms - -[0m
+[0mGET /api/analytics/dashboard [36m304[0m 21.100 ms - -[0m
+[0mGET /api/analytics/dashboard [36m304[0m 1.247 ms - -[0m

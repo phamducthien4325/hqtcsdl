@@ -15,10 +15,10 @@ import SendOutlinedIcon from "@mui/icons-material/SendOutlined";
 import { api } from "../services/api";
 
 const suggestedPrompts = [
-  "Top 5 customers this year",
-  "Total revenue in 2004",
-  "Orders from France",
-  "Average payment amount for customers in France"
+  "Top 5 customers with the highest revenue this year",
+  "What is the total revenue in 2004?",
+  "Show me orders from France",
+  "What is the average payment amount for customers in France?"
 ];
 
 export function ChatbotPanel() {
@@ -76,7 +76,7 @@ export function ChatbotPanel() {
                 AI Chat
               </Typography>
               <Typography variant="body2" sx={{ color: "#444653" }}>
-                Query the ClassicModels warehouse in natural language. The assistant will use OpenAI when available and fall back to safe built-in SQL rules.
+                Ask questions in natural English or Vietnamese. The assistant will interpret your intent, generate a safe query when needed, and return an easy-to-read answer.
               </Typography>
             </Box>
 
@@ -122,7 +122,7 @@ export function ChatbotPanel() {
               minRows={4}
               value={question}
               onChange={(event) => setQuestion(event.target.value)}
-              placeholder="Top 5 customers this year"
+              placeholder="Example: top 5 customers with the highest revenue this year"
               sx={{
                 "& .MuiOutlinedInput-root": {
                   bgcolor: "#ffffff",
@@ -136,7 +136,7 @@ export function ChatbotPanel() {
               onClick={submit}
               disabled={loading}
             >
-              {loading ? "Running..." : "Run query"}
+              {loading ? "Processing..." : "Ask chatbot"}
             </Button>
             {error ? (
               <Paper sx={{ p: 2, borderRadius: 3, bgcolor: "#ffdad6", color: "#93000a" }}>
@@ -147,32 +147,55 @@ export function ChatbotPanel() {
               <Paper sx={{ p: 2.5, borderRadius: 3, bgcolor: "#ffffff" }}>
                 <Stack spacing={1.5}>
                   <Typography variant="overline" sx={{ color: "#757684" }}>
+                    Answer
+                  </Typography>
+                  <Typography
+                    variant="body1"
+                    sx={{
+                      lineHeight: 1.7,
+                      color: "#191c1e",
+                      bgcolor: "#f7f9fb",
+                      borderRadius: 2.5,
+                      p: 1.75
+                    }}
+                  >
+                    {response.answer}
+                  </Typography>
+                  <Typography variant="overline" sx={{ color: "#757684" }}>
                     Explanation
                   </Typography>
                   <Typography variant="body2">{response.explanation}</Typography>
-                  <Typography variant="overline" sx={{ color: "#757684" }}>
-                    SQL
-                  </Typography>
-                  <Typography
-                    variant="body2"
-                    sx={{
-                      fontFamily: "ui-monospace, SFMono-Regular, monospace",
-                      bgcolor: "#f2f4f6",
-                      p: 1.5,
-                      borderRadius: 2
-                    }}
-                  >
-                    {String(response.sql)}
-                  </Typography>
-                  <Typography variant="overline" sx={{ color: "#757684" }}>
-                    Rows
-                  </Typography>
-                  <Typography
-                    variant="body2"
-                    sx={{ whiteSpace: "pre-wrap", maxHeight: 320, overflow: "auto" }}
-                  >
-                    {JSON.stringify(response.rows, null, 2)}
-                  </Typography>
+                  {response.sql ? (
+                    <>
+                      <Typography variant="overline" sx={{ color: "#757684" }}>
+                        SQL
+                      </Typography>
+                      <Typography
+                        variant="body2"
+                        sx={{
+                          fontFamily: "ui-monospace, SFMono-Regular, monospace",
+                          bgcolor: "#f2f4f6",
+                          p: 1.5,
+                          borderRadius: 2
+                        }}
+                      >
+                        {String(response.sql)}
+                      </Typography>
+                    </>
+                  ) : null}
+                  {Array.isArray(response.rows) && response.rows.length ? (
+                    <>
+                      <Typography variant="overline" sx={{ color: "#757684" }}>
+                        Rows
+                      </Typography>
+                      <Typography
+                        variant="body2"
+                        sx={{ whiteSpace: "pre-wrap", maxHeight: 320, overflow: "auto" }}
+                      >
+                        {JSON.stringify(response.rows, null, 2)}
+                      </Typography>
+                    </>
+                  ) : null}
                 </Stack>
               </Paper>
             ) : null}
