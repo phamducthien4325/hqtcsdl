@@ -69,8 +69,17 @@ export function ChatbotPanel() {
         <SmartToyOutlinedIcon />
       </IconButton>
       <Drawer anchor="right" open={open} onClose={() => setOpen(false)}>
-        <Box sx={{ width: 460, maxWidth: "100vw", p: 3, bgcolor: "#f7f9fb", minHeight: "100%" }}>
-          <Stack spacing={2.5}>
+        <Box
+          sx={{
+            width: { xs: "100vw", sm: 560, lg: 680 },
+            maxWidth: "100vw",
+            p: { xs: 2, sm: 3.5, lg: 4 },
+            bgcolor: "#f7f9fb",
+            height: "100vh",
+            overflow: "hidden"
+          }}
+        >
+          <Stack spacing={3} sx={{ height: "100%", overflow: "auto", pr: { sm: 0.5 } }}>
             <Box>
               <Typography variant="h4" sx={{ color: "#0d2d7e", mb: 1 }}>
                 AI Chat
@@ -119,14 +128,14 @@ export function ChatbotPanel() {
             </Typography>
             <TextField
               multiline
-              minRows={4}
+              minRows={6}
               value={question}
               onChange={(event) => setQuestion(event.target.value)}
               placeholder="Example: top 5 customers with the highest revenue this year"
               sx={{
                 "& .MuiOutlinedInput-root": {
                   bgcolor: "#ffffff",
-                  borderRadius: 2
+                  borderRadius: 2.5
                 }
               }}
             />
@@ -144,7 +153,7 @@ export function ChatbotPanel() {
               </Paper>
             ) : null}
             {response ? (
-              <Paper sx={{ p: 2.5, borderRadius: 3, bgcolor: "#ffffff" }}>
+              <Paper sx={{ p: { xs: 2.5, sm: 3 }, borderRadius: 3, bgcolor: "#ffffff" }}>
                 <Stack spacing={1.5}>
                   <Typography variant="overline" sx={{ color: "#757684" }}>
                     Answer
@@ -190,7 +199,7 @@ export function ChatbotPanel() {
                       </Typography>
                       <Typography
                         variant="body2"
-                        sx={{ whiteSpace: "pre-wrap", maxHeight: 320, overflow: "auto" }}
+                        sx={{ whiteSpace: "pre-wrap", maxHeight: 420, overflow: "auto" }}
                       >
                         {JSON.stringify(response.rows, null, 2)}
                       </Typography>
